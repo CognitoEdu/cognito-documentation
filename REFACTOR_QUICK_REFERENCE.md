@@ -192,6 +192,8 @@ Consolidate 11 → 3 contexts
 
 ## 📞 Quick Links
 
+- **🎯 For Leadership**: [EXECUTIVE_DECISION_BRIEF.md](EXECUTIVE_DECISION_BRIEF.md) ⭐ **START HERE**
+- **🚨 Why This Matters**: [REFACTOR_CONTEXT_DEEP_DIVE.md](REFACTOR_CONTEXT_DEEP_DIVE.md) - The 11 contexts problem
 - **📄 Full Assessment**: [REFACTOR_README.md](REFACTOR_README.md)
 - **📊 Executive Summary**: [REFACTOR_EXECUTIVE_SUMMARY.md](REFACTOR_EXECUTIVE_SUMMARY.md)
 - **🗑️ What to Remove**: [REFACTOR_REDUNDANCY_REPORT.md](REFACTOR_REDUNDANCY_REPORT.md)
@@ -223,7 +225,7 @@ Consolidate 11 → 3 contexts
 ### Confirmed Removals
 - ✅ Batch saving mechanism
 - ✅ Homework functionality
-- ✅ Day-based activity limits
+- ✅ Day-based activity limits (currentFreeType: 'days' legacy system)
 - ✅ Maintenance mode
 - ✅ Commented code
 - ✅ Always-false toggle
@@ -233,13 +235,19 @@ Consolidate 11 → 3 contexts
 - ✅ Per-element saving (current)
 - ✅ Activity completion tracking
 - ✅ All 10 cohort limit logic
+- ✅ period: 'daily' vs 'weekly' (NOT the same as day-based system)
 - ✅ isProxyPremiumAccount
 - ✅ isGuestAccount handling
 - ✅ Display mode switching
 - ✅ Exam Q reset functionality
 
+### Root Problem to Fix
+- 🚨 **11 contexts with flag-based coordination** - See [Context Deep Dive](REFACTOR_CONTEXT_DEEP_DIVE.md)
+- This is why the component is unmaintainable
+- Phase 3 (context refactoring) is critical
+
 ### Pending Verification
-- ⚠️ Zero users with day-based config?
+- ⚠️ Zero users with currentFreeType: 'days'?
 - ⚠️ Zero users without config?
 - ⚠️ Homework isolated to school routes?
 
@@ -248,4 +256,17 @@ Consolidate 11 → 3 contexts
 **Last Updated**: November 20, 2025  
 **Assessment Status**: ✅ Complete  
 **Implementation Status**: 🟡 Ready to begin after verification
+
+---
+
+## 🚨 Critical Discovery: The Context Problem
+
+After deep analysis, we've identified that **11 contexts with flag-based coordination** is the root architectural problem. 
+
+**Read**: [REFACTOR_CONTEXT_DEEP_DIVE.md](REFACTOR_CONTEXT_DEEP_DIVE.md) to understand:
+- Why 11 contexts creates maintenance nightmare
+- Example: User clicks submit → 8 steps, 4 flags, 3 useEffects
+- Why Phase 3 (context refactoring) is essential
+
+**Leadership decision needed**: [EXECUTIVE_DECISION_BRIEF.md](EXECUTIVE_DECISION_BRIEF.md)
 

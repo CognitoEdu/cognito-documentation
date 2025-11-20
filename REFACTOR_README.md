@@ -9,15 +9,20 @@
 ## 📋 Quick Navigation
 
 ### Start Here
+- **[Executive Decision Brief](EXECUTIVE_DECISION_BRIEF.md)** ⭐ - For leadership: honest assessment & recommendation
+- **[Quick Reference](REFACTOR_QUICK_REFERENCE.md)** - One-page summary
 - **[Executive Summary](REFACTOR_EXECUTIVE_SUMMARY.md)** - High-level overview, TL;DR, key findings
 
 ### Implementation Guides
+- **[Phase 0 Checklist](REFACTOR_PHASE0_CHECKLIST.md)** - Step-by-step removal instructions
 - **[Redundancy Report](REFACTOR_REDUNDANCY_REPORT.md)** - Line-by-line removal list (820+ lines)
 - **[DB Migration Spec](REFACTOR_DB_MIGRATION_SPEC.md)** - Database migration requirements and scripts
 - **[Refactoring Roadmap](REFACTOR_ROADMAP.md)** - Phase-by-phase refactoring plan (Phases 1-3)
 
 ### Technical Deep Dives
+- **[Context Deep Dive](REFACTOR_CONTEXT_DEEP_DIVE.md)** ⭐ - The 11 contexts problem (root cause)
 - **[Functional Areas Map](REFACTOR_FUNCTIONAL_AREAS.md)** - 12 core functional areas documented
+- **[Statistics](REFACTOR_STATISTICS.md)** - Metrics, ROI, complexity scores
 - **[Config Analysis](REFACTOR_CONFIG_ANALYSIS.md)** - Activity allowance config analysis
 
 ---
@@ -98,8 +103,14 @@
 
 ## 📖 Document Descriptions
 
+### [EXECUTIVE_DECISION_BRIEF.md](EXECUTIVE_DECISION_BRIEF.md) ⭐
+**Best for**: Leadership decision-making, stakeholder buy-in  
+**Contains**: Honest assessment, business case, ROI, timeline aligned with product roadmap  
+**Read time**: 10 minutes  
+**Use case**: Getting executive approval for refactoring
+
 ### [REFACTOR_EXECUTIVE_SUMMARY.md](REFACTOR_EXECUTIVE_SUMMARY.md)
-**Best for**: Quick overview, stakeholder communication  
+**Best for**: Quick overview, technical stakeholder communication  
 **Contains**: TL;DR, findings summary, timeline, recommendations  
 **Read time**: 5 minutes
 
@@ -126,7 +137,20 @@
 - 2.3: Scoring & Progress (Very High complexity)
 - 2.7: Flashcard Logic (response handling)
 - 2.8: Exam Q Logic (stepper, carousel)
-- 2.11: Context Coordination (11 contexts)
+- 2.11: Context Coordination (11 contexts) - **See deep dive below**
+
+### [REFACTOR_CONTEXT_DEEP_DIVE.md](REFACTOR_CONTEXT_DEEP_DIVE.md) ⭐
+**Best for**: Understanding the root architectural problem  
+**Contains**: Why 11 contexts is the core issue, flag coordination patterns, real example flows, proposed solution  
+**Read time**: 30 minutes  
+**Use case**: Deciding if Phase 3 (context refactoring) is necessary
+
+**Key sections**:
+- The 11 Contexts (detailed state structures)
+- Flag-Based Coordination Horror Show
+- Example: "User Submits Element" flow (8 steps!)
+- Proposed Unified ActivityContext
+- Can We Skip This? (Answer: No, this is the real problem)
 
 ### [REFACTOR_CONFIG_ANALYSIS.md](REFACTOR_CONFIG_ANALYSIS.md)
 **Best for**: Activity limit code decisions  
@@ -352,15 +376,21 @@ Review the appropriate document:
 
 ## 📂 Document File List
 
-All documents located in: `/cognito-main-client/`
+All documents located in: `/cognito-main-client/documentation/god_refactor/`
 
-1. `REFACTOR_README.md` (this file) - Navigation and overview
-2. `REFACTOR_EXECUTIVE_SUMMARY.md` - High-level findings
-3. `REFACTOR_REDUNDANCY_REPORT.md` - What to remove
-4. `REFACTOR_FUNCTIONAL_AREAS.md` - What exists
-5. `REFACTOR_CONFIG_ANALYSIS.md` - Activity limits analysis
-6. `REFACTOR_DB_MIGRATION_SPEC.md` - Database migration
-7. `REFACTOR_ROADMAP.md` - Long-term refactoring plan
+1. `EXECUTIVE_DECISION_BRIEF.md` ⭐ - For leadership: go/no-go decision
+2. `REFACTOR_README.md` (this file) - Navigation and overview
+3. `REFACTOR_QUICK_REFERENCE.md` - One-page summary
+4. `REFACTOR_EXECUTIVE_SUMMARY.md` - High-level findings
+5. `REFACTOR_REDUNDANCY_REPORT.md` - What to remove
+6. `REFACTOR_FUNCTIONAL_AREAS.md` - What exists
+7. `REFACTOR_CONTEXT_DEEP_DIVE.md` ⭐ - Context architecture problem
+8. `REFACTOR_CONFIG_ANALYSIS.md` - Activity limits analysis
+9. `REFACTOR_DB_MIGRATION_SPEC.md` - Database migration
+10. `REFACTOR_ROADMAP.md` - Long-term refactoring plan
+11. `REFACTOR_PHASE0_CHECKLIST.md` - Implementation steps
+12. `REFACTOR_STATISTICS.md` - Metrics and ROI
+13. `REFACTOR_START_HERE.md` - Landing page
 
 ---
 
